@@ -16,6 +16,7 @@
     <title>NODE FARM</title>
 
     <style>
+      /* Base Styles (Unchanged from your input unless noted) */
       *,
       *::before,
       *::after {
@@ -65,6 +66,8 @@
       .container {
         width: 95rem;
         margin: 0 auto;
+        max-width: 100%;
+        padding: 0 2rem;
       }
 
       .cards-container {
@@ -78,6 +81,7 @@
         transform: skewX(-20deg);
         display: flex;
         transition: all 0.5s;
+        overflow: hidden;
       }
 
       .card__emoji {
@@ -105,6 +109,7 @@
 
       .card__details {
         display: flex;
+        flex-wrap: wrap;
       }
 
       .card__detail-box {
@@ -184,6 +189,99 @@
       .not-organic {
         display: none;
       }
+
+      /* ---------------------------------- */
+      /* 🔁 Responsive Media Queries Below */
+      /* ---------------------------------- */
+
+      /* Medium screens */
+      @media (max-width: 1024px) {
+        html {
+          font-size: 56.25%;
+        }
+
+        .card__title {
+          font-size: 2.5rem;
+        }
+
+        .card__detail {
+          font-size: 1.6rem;
+        }
+
+        .card__detail--price,
+        .card__detail--organic {
+          font-size: 1.7rem;
+        }
+      }
+
+      /* Small screens */
+      @media (max-width: 768px) {
+        html {
+          font-size: 50%;
+        }
+
+        h1 {
+          font-size: 4rem;
+        }
+
+        .card {
+          flex-direction: column;
+          transform: none;
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+        }
+
+        .card__emoji {
+          letter-spacing: 0;
+          font-size: 4rem;
+          padding: 1rem;
+          text-align: center;
+        }
+
+        .card__title-box {
+          justify-content: center;
+          padding: 1rem 2rem;
+        }
+
+        .card__title {
+          font-size: 2.4rem;
+          text-align: center;
+        }
+
+        .card__details {
+          flex-direction: column;
+        }
+
+        .card__detail-box {
+          border-right: none;
+          border-bottom: 1px solid #ddd;
+        }
+
+        .card__link {
+          width: 100%;
+          padding: 1.5rem;
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        .card__title {
+          font-size: 2rem;
+        }
+
+        .card__emoji {
+          font-size: 3rem;
+        }
+
+        .card__link {
+          font-size: 1.4rem;
+          padding: 1.2rem;
+        }
+
+        .card__detail {
+          font-size: 1.4rem;
+          padding: 1rem;
+        }
+      }
     </style>
   </head>
 
@@ -191,125 +289,7 @@
     <div class="container">
       <h1>🌽 Node Farm 🥦</h1>
 
-      <div class="cards-container">
-        <figure class="card">
-          <div class="card__emoji">🥑🥑</div>
-
-          <div class="card__title-box">
-            <h2 class="card__title">Fresh Avocado</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--organic">Organic!</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail">4 🥑 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">6.50€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🧀🧀</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Goat and Sheep Cheese</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail">250g per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">5.00€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🥦🥦</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Apollo Broccoli</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--organic">Organic!</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail">3 🥦 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">5.50€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🥕🥕</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Baby Carrots</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--organic">Organic!</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail">20 🥕 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">3.00€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-
-        <figure class="card">
-          <div class="card__emoji">🌽🌽</div>
-          <div class="card__title-box">
-            <h2 class="card__title">Sweet Corncobs</h2>
-          </div>
-
-          <div class="card__details">
-            <div class="card__detail-box">
-              <h6 class="card__detail">2 🌽 per 📦</h6>
-            </div>
-
-            <div class="card__detail-box">
-              <h6 class="card__detail card__detail--price">2.00€</h6>
-            </div>
-          </div>
-
-          <a class="card__link" href="#">
-            <span>Detail <i class="emoji-right">👉</i></span>
-          </a>
-        </figure>
-      </div>
+      <div class="cards-container">{%PRODUCT_CARDS%}</div>
     </div>
   </body>
 </html>

@@ -1,0 +1,1 @@
+I am writing this text into the output.txt file by myself
